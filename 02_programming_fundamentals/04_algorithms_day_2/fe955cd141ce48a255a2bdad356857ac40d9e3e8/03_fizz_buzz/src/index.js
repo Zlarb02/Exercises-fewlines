@@ -1,18 +1,15 @@
 
 function fizzBuzz(list) {
   // Code the function here.
-  let yourBrandNewFizzBuzzList = [] ;
-  
-  function ifDivisible15(currentValue) {
-    if (currentValue % 15 === 0){
-      currentValue = "FizzBuzz"
-    }
-  }
-
-  list.forEach(element => ifDivisible15(currentValue));
-   
-  return console.log(yourBrandNewFizzBuzzList) ;
-
+  const fizzlist = list ;
+  const resultArray = [];
+  fizzlist.forEach(element => {
+    let i = list[0];
+    let currentValue = fizzlist[i];
+    resultArray.push();
+    
+  });
+  return resultArray ;
 }
 
 fizzBuzz([1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15]);
