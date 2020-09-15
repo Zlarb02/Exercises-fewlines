@@ -1,9 +1,7 @@
 // code here
-const sayHello = player => console.log(`Hello, ${player.name}`) ;
+const sayHello = (player) => console.log(`Hello, ${player.name}`);
 // leave the code below for tests to work
 module.exports = sayHello;
-
-
 
 /* 
 the `thisIsThePlayer` function waits for a _callback function_ as a parameter.

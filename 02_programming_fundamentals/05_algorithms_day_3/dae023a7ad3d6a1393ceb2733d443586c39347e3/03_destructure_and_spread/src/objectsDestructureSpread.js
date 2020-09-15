@@ -1,17 +1,23 @@
-function getConfig(config) {
+function getConfig(config = {}) {
+  const { user, hardware } = config;
+
   const defaultConfig = {
     user: {
+      ...user,
       name: "root",
       password: "admin",
     },
     hardware: {
+      ...config.hardware,
       CPUThreads: 4,
       memory: 2,
       diskSpace: 20,
-    },
+    }
   };
 
-  return /** Complete here */;
+  
+
+  return config;
 }
 
 function logInfos(user) {
@@ -28,7 +34,7 @@ function logInfos(user) {
     firstName,
     lastName,
     address: { city, country },
-  } = user; // Change here
+  } = redactedUser; // Change here
 
   console.log(`${firstName} ${lastName} lives in ${city}, ${country}.`);
 }
