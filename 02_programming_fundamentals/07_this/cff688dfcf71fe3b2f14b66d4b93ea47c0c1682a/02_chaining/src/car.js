@@ -14,8 +14,7 @@ const car = {
   },
   drive: function (time) {
     //console.log(time + "min");
-    this.time = time;
-    this.distance = this.distance + Math.round((this.speed * this.time) / 6) / 10;
+    this.distance = this.distance + Math.round((this.speed * time) / 6) / 10;
     return this;
   },
   showDistance: function () {
