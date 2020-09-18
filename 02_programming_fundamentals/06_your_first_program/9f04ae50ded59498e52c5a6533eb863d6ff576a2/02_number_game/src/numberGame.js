@@ -7,7 +7,7 @@ function numberGame(reader, min = 1, max = 100) {
   const getNumber = (text) => {
     reader.question(text, (usernumber) => {
       i++;
-      const yourthebest = (usernumber) => {
+      const yourthebest = () => {
         console.log("I wait for this moment so long.. wait this is good ? you win in " + i + " try");
       };
       let switchFlag = "nimpsssss";
