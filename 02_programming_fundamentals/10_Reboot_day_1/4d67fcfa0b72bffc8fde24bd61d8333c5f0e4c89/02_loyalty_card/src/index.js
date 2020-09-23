@@ -1,8 +1,9 @@
 import readline from "readline";
-import addCustomer from "../addCustomer";
+import loyaltyCardManager from "./LoyaltyCardManager/index.js";
+
 const reader = readline.createInterface({
   input: process.stdin,
   output: process.stdout,
 });
 
-addCustomer(reader);
+loyaltyCardManager(reader);
