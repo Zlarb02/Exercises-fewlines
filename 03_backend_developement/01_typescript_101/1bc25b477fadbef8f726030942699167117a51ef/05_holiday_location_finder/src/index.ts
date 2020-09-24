@@ -5,7 +5,7 @@ import { holidayLocationFinder } from "./holidayLocationFinder";
 
 const reader = readline.createInterface({
   input: process.stdin,
-  output: process.stdout
+  output: process.stdout,
 });
 
 holidayLocationFinder(reader);
