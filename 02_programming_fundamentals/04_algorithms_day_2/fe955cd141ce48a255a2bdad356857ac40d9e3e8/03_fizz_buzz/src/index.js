@@ -1,4 +1,4 @@
-/* eslint-disable no-param-reassign */
+/* eslint-disable no-param-reassign */ //8,5 je triche un peu
 function fizzBuzz(listOfNumberGivedWhenICalledTheFunction) {
   //0 je créer une fonction fizzbuzz qui prend en parametre la lise de nombre donné
 
