@@ -18,11 +18,37 @@ This function will _return_ a **new array** where some values will have been mod
 E.g.
 
 ```js
-fizzBuzz([1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15]);
+fizzBuzz([
+  1,
+  2,
+  3,
+  4,
+  5,
+  6,
+  7,
+  8,
+  9,
+  10,
+  11,
+  12,
+  13,
+  14,
+  15,
+  16,
+  17,
+  18,
+  19,
+  20,
+  21,
+  22,
+  23,
+  24,
+]);
 // => [1, 2, "Fizz", 4, "Buzz", "Fizz", 7, 8, "Fizz", "Buzz", 11, "Fizz", 13, 14, "FizzBuzz"]
 ```
 
 ## Hints
 
-- You can try your function using the previously defined `range()` in the `01_range_function/src/index.js` file to create your array of positive integers;
+<!-- - You can try your function using the previously defined `range()` in the `01_range_function/src/index.js` file to create your array of positive integers; -->
+
 - The result of the function **must be** a new array.
