@@ -3,21 +3,20 @@ import { Tree } from "./Tree";
 // Code your class here.
 class OrangeTree extends Tree {
   oranges: any = [];
-  constructor(age: number) {
-    super(age);
-  }
-  ageOneYear(): void {
-    if (this.isAlive() == true) {
-      this.age = this.age + 1;
-      this.growOranges();
-      if (this.age <= 9) {
-        this.height += 25;
-      } else if (this.age <= 20) {
-        this.height += 10;
-      }
-    }
-  }
 
+  ageOneYear(): void {
+    this.age += 1;
+
+    if (this.age < 10) {
+      this.height += 25;
+    } else if (this.age >= 10 && this.age <= 20) {
+      this.height += 10;
+    }
+
+    this.alive = this.isAlive();
+
+    this.growOranges();
+  }
   isAlive(): boolean {
     if (this.age < 50) {
       return true;
@@ -32,31 +31,38 @@ class OrangeTree extends Tree {
     }
   }
 
-  growOranges(): void {
-    this.oranges = [];
-    if (this.age <= 4) {
-      this.oranges = [];
-    } else if (this.age >= 5 && this.age <= 10) {
-      for (let i: number = 0; i < 10; i++) {
-        this.oranges.push("🍊");
-      }
-    } else if (this.age >= 11 && this.age <= 20) {
-      for (let i: number = 0; i < 20; i++) {
-        this.oranges.push("🍊");
-      }
-    } else if (this.age >= 21 && this.age <= 40) {
-      for (let i: number = 0; i < 5; i++) {
-        this.oranges.push("🍊");
-      }
+  private handleOrangeGrowth(num: number): void {
+    for (let i = 0; i < num; i++) {
+      this.oranges.push("🍊");
     }
   }
 
+  growOranges(): void {
+    this.oranges = [];
+
+    let num = 0;
+
+    if (this.age >= 5 && this.age <= 10) {
+      num = 10;
+    } else if (this.age > 10 && this.age <= 20) {
+      num = 20;
+    } else if (this.age > 20 && this.age <= 40) {
+      num = 5;
+    }
+
+    num && this.handleOrangeGrowth(num);
+  }
   pickAnOrange(): void {
     if (this.oranges != []) {
       this.oranges.pop();
+      console.log("You picked one 🍊.");
     } else {
-      console.log(`There is 0 orange in the tree, sorry.`);
+      console.log("There is no 🍊.");
     }
+  }
+  seed(): void {
+    super.seed();
+    this.oranges = [];
   }
 }
 

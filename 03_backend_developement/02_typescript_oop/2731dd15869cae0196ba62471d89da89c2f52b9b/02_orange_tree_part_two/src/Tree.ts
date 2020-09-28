@@ -1,24 +1,29 @@
-import { OrangeTree } from "./OrangeTree";
-
-// Paste your previous `Tree` class here.
 abstract class Tree {
   age: number;
-  height: number = 0;
-  alive: boolean = this.isAlive();
+  height: number;
+  alive: boolean = true;
+
   constructor(age: number) {
     this.age = age;
-    if (this.age <= 9) {
-      this.height = this.height + 25 * this.age;
-    } else if (this.age <= 20) {
-      this.height = this.height + 10 * this.age + 135;
-    } else if (this.age > 20) {
-      this.height = 335;
+
+    let height: number = 0;
+
+    for (let index = 1; index <= age; index++) {
+      if (this.age > 0 && index < 10) {
+        height += 25;
+      } else if (index >= 10 && this.age <= 20) {
+        height += 10;
+      } else if (this.age >= 20) {
+        height = 335;
+      }
     }
+
+    this.height = height;
   }
 
-  abstract ageOneYear(): void;
-
   abstract isAlive(): boolean;
+
+  abstract ageOneYear(): void;
 
   seed(): void {
     this.age = 0;
@@ -27,5 +32,4 @@ abstract class Tree {
   }
 }
 
-// Leave the line below for tests to work properly.
 export { Tree };

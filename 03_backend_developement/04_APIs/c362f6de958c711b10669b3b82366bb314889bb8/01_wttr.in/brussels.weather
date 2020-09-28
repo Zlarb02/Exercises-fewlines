@@ -1,1 +1,9 @@
-curl fr.wttr.in/Brussels
+README.md
+brussels.weather
+city.list.json
+node_modules
+package.json
+src
+tests
+tsconfig.json
+yarn.lock
