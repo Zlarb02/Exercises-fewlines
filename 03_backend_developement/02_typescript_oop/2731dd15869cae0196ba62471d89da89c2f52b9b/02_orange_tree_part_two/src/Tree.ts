@@ -1,8 +1,10 @@
+import { OrangeTree } from "./OrangeTree";
+
 // Paste your previous `Tree` class here.
 abstract class Tree {
   age: number;
   height: number = 0;
-  alive: boolean = true;
+  alive: boolean = this.isAlive();
   constructor(age: number) {
     this.age = age;
     if (this.age <= 9) {

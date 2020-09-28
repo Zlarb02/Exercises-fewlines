@@ -19,9 +19,21 @@ class OrangeTree extends Tree {
   }
 
   isAlive(): boolean {
-    return (this.alive = true);
+    if (this.age < 50) {
+      return true;
+    }
+    if (this.age >= 100) {
+      return false;
+    } else {
+      const dieProbability: number = (this.age - 50) / 50;
+
+      const itsAlive: boolean = Math.random() > dieProbability;
+      return itsAlive;
+    }
   }
+
   growOranges(): void {
+    this.oranges = [];
     if (this.age <= 4) {
       this.oranges = [];
     } else if (this.age >= 5 && this.age <= 10) {
@@ -40,9 +52,12 @@ class OrangeTree extends Tree {
   }
 
   pickAnOrange(): void {
-    if(this.oranges != []){
-        
+    if (this.oranges != []) {
+      this.oranges.pop();
+    } else {
+      console.log(`There is 0 orange in the tree, sorry.`);
     }
+  }
 }
 
 // Leave the line below for tests to work properly.
