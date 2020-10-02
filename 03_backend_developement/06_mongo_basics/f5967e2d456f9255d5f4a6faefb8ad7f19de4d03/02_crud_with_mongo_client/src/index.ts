@@ -1,6 +1,6 @@
 import * as mongo from "mongodb";
 
-import { updateOneCountry } from "./updateOneCountry";
+import { updateManyCountries } from "./updateManyCountries";
 
 const databaseUrl =
   "mongodb://mongo-basics-app:password@localhost:27017/mongo-basics";
@@ -14,5 +14,8 @@ mongo.MongoClient.connect(databaseUrl, options).then((client) => {
   /*   showCollections(db)
     .then((result) => console.log(result))
     .then(() => client.close()); */
-  updateOneCountry(db);
+  updateManyCountries(db).then((r: any) => {
+    console.log(r);
+    client.close();
+  });
 });
