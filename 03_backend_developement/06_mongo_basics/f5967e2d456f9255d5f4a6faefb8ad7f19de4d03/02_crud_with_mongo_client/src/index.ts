@@ -14,7 +14,7 @@ mongo.MongoClient.connect(databaseUrl, options).then((client) => {
   /*   showCollections(db)
     .then((result) => console.log(result))
     .then(() => client.close()); */
-  updateManyCountries(db).then((r: any) => {
+  updateManyCountries(db).then((r) => {
     console.log(r);
     client.close();
   });
